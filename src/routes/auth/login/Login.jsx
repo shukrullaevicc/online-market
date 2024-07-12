@@ -1,13 +1,11 @@
 import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import AppContext from '../../../context/store';
-import { useTranslation } from 'react-i18next';
 import axios from '../../../api';
 import './Login.scss';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-  const { t } = useTranslation();
   const [state, dispatch] = useContext(AppContext);
   const [userData, setUserData] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
@@ -36,6 +34,9 @@ const Login = () => {
         email: userData.email,
         password: userData.password,
       });
+
+      console.log('API response:', response);
+
       if (response.status === 201) {
         dispatch({ type: 'LOGIN_USER', tokens: response.data });
         toast.success('Login successful!');
@@ -43,6 +44,7 @@ const Login = () => {
         toast.error('Unexpected response from the server.');
       }
     } catch (error) {
+      console.error('Error response:', error.response);
       if (error.response) {
         if (error.response.status === 400) {
           toast.error('Invalid email or password.');
@@ -59,12 +61,12 @@ const Login = () => {
 
   return (
     <div className='login'>
-      <h1 className='login__title'>{t('login')}</h1>
-      <p className='login__text'>{t('login__text')}</p>
+      <h1 className='login__title'>Login</h1>
+      <p className='login__text'>Enter your credentials to access your account.</p>
 
       <form className='form-login' onSubmit={handleUserLogin}>
         <div className='form-login__field'>
-          <p className='form-login__text'>{t('email')}</p>
+          <p className='form-login__text'>Email address</p>
           <input
             type='email'
             placeholder='Email'
@@ -76,7 +78,7 @@ const Login = () => {
         </div>
 
         <div className='form-login__field'>
-          <p className='form-login__text'>{t('password')}</p>
+          <p className='form-login__text'>Password</p>
           <input
             type='password'
             placeholder='Password'
@@ -92,9 +94,9 @@ const Login = () => {
         </button>
 
         <div className='form-login__register'>
-          <p className='form-login__text'>{t('dont have an account')}</p>
+          <p className='form-login__text'>Don't have an account?</p>
           <NavLink to='/auth/register' className='form-login__text'>
-            {t('register here')}
+            Register here
           </NavLink>
         </div>
       </form>
