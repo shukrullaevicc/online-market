@@ -1,0 +1,150 @@
+@import '../../index.scss';
+
+.single-page{
+   margin-top: 40px;
+   .single-page__wrapper{
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .single-page__img{
+         img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+         }
+      }
+      .single-page__contant{
+         width: 100%;
+         max-width: 700px;
+         .single-page__title{
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 500;
+            color: $dark-black;
+         }
+         .single-page__rating-view{
+            display: flex;
+            align-items: center;
+            gap: 0 20px;
+            margin-top: 22px;
+            .single-page__rating {
+               gap: 0 5px;
+               font-size: 16  px;
+               color: gold;
+            }
+            .single-page__view{
+               font-size: 16px;
+               line-height: 20px;
+               font-weight: 400;
+               color: $grey;
+            }
+         }
+         .single-page__price-wrapper {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0 8px;
+            margin-top: 20px;
+            border-top: 1px solid #F6F7F8;
+            padding-top: 20px;
+            .single-page__price {
+               color: $light-blue;
+               font-size: 18px;
+               font-weight: 700;
+               line-height: 32.4px;
+               letter-spacing: 0.5px;
+            }
+            .single-page__discount {
+               font-size: 14px;
+               font-weight: 400;
+               line-height: 21px;
+               letter-spacing: 0.5px;
+               color: $grey;
+               text-decoration: line-through;
+            }
+            .single-page__sale {
+               font-weight: 700;
+               font-size: 14px;
+               line-height: 21px;
+               letter-spacing: 0.5px;
+               color: $pink;
+            }
+         }
+         .single-page__category{
+            margin-top: 17px;
+            border-bottom: 1px solid #F6F7F8;
+            padding-bottom: 17px;
+            table{
+               tr{
+                  td{
+                     padding: 5px 5px;
+                     font-size: 14px;
+                     line-height: 21px;
+                     font-weight: 400;
+                     color: $dark-black;
+                  }
+               }
+            }
+            p{
+               padding: 5px 5px;
+               font-size: 14px;
+               line-height: 21px;
+               font-weight: 400;
+               color: $dark-black;
+            }
+         }
+         .add-to-cart__wrapper{
+            display: flex;
+            align-items: center;
+            gap: 0 150px;
+            padding: 20px 0;
+            margin-top: 50px;
+            border-top: 1px solid #F6F7F8;
+            border-bottom: 1px solid #F6F7F8;
+            .add-to-cart{
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               background: #F6F7F8;
+               border-radius: 5px;
+               button{
+                  padding: 20px;
+                  border: none;
+                  background: transparent;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+                  svg{
+                     font-size: 18px;
+                     line-height: 27px;
+                     font-weight: 700;
+                     color: $light-blue;
+                  }
+               }
+               p{
+                  font-size: 18px;
+                  line-height: 27px;
+                  font-weight: 500;
+               }
+            }
+            .add-to-cart__btn{
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 0 10px;
+               border: none;
+               padding: 20px;
+               border-radius: 5px;
+               background-color: #F6F7F8;
+               font-size: 16px;
+               line-height: 19px;
+               font-weight: 400;
+               cursor: pointer;
+               color: $light-blue;
+            }
+         }
+      }
+   }
+}

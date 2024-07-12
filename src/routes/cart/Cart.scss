@@ -1,0 +1,99 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$danger-color: #e74c3c;
+$background-color: #f8f9fa;
+$text-color: #333;
+$border-radius: 5px;
+$box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+.cart-page {
+   padding: 20px;
+   background-color: $background-color;
+   min-height: 100vh;
+
+   h1 {
+      text-align: center;
+      color: $primary-color;
+      margin-bottom: 20px;
+   }
+
+   table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+
+      thead {
+         tr {
+            background-color: $primary-color;
+            color: white;
+         }
+      }
+
+      th,
+      td {
+         padding: 15px;
+         text-align: center;
+         border: 1px solid #ddd;
+      }
+
+      td {
+         background-color: white;
+      }
+   }
+
+   button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: $border-radius;
+      cursor: pointer;
+
+      &.remove {
+         background-color: $danger-color;
+         color: white;
+      }
+
+      &.quantity {
+         background-color: $secondary-color;
+         color: white;
+      }
+
+      &:disabled {
+         background-color: #ddd;
+         cursor: not-allowed;
+      }
+   }
+
+   .cart-summary {
+      background-color: white;
+      padding: 20px;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow;
+      text-align: right;
+
+      p {
+         margin: 10px 0;
+         font-size: 18px;
+         color: $text-color;
+
+         &:last-child {
+            font-weight: bold;
+            font-size: 20px;
+         }
+      }
+   }
+}
+
+@media (max-width: 768px) {
+   .cart-page {
+      padding: 10px;
+
+      table,
+      .cart-summary {
+         font-size: 14px;
+      }
+
+      button {
+         padding: 3px 5px;
+      }
+   }
+}

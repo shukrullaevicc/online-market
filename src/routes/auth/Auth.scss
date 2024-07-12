@@ -1,0 +1,13 @@
+@import '../../index.scss';
+
+.auth{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   .auth__list{
+      width: 100%;
+      max-width: 419px;
+      margin-top: 80px;
+   }
+}

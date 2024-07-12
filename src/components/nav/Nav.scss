@@ -1,0 +1,77 @@
+@import '../../index.scss';
+
+.nav{
+   margin-top: 30px;
+   &__wrapper{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0 40px;
+      .nav__icon{
+         width: 24px;
+         height: 24px;
+      }
+      .nav__list{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex: 1;
+         gap: 0 40px;
+         .nav__link{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0 8px;
+            .item__text{
+               font-weight: 500;
+               color: $light-black;
+            }
+         }
+      }
+      select{
+         cursor: pointer;
+         border: 2px solid $dark-black;
+         padding: 2px 0;
+         font-weight: 500;
+         font-size: 18px;
+         line-height: 24px;
+         color: $light-black;
+      }
+      .nav__favourite {
+         position: relative;
+
+         .favourite__count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+         }
+      }
+      .nav__cart {
+         position: relative;
+
+         .cart__count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+         }
+      }
+   }
+}

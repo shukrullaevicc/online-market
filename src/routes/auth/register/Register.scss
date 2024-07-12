@@ -1,0 +1,59 @@
+@import '../../../index.scss';
+
+.register{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   max-width: 419px;
+   .register__title{
+      font-size: 42px;
+      line-height: 62.93px;
+      font-weight: 500;
+      color: $dark-black;
+   }
+   .form-register{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 40px;
+      .form-register__text{
+         font-size: 16px;
+         line-height: 20px;
+         margin-bottom: 10px;
+      }
+      input{
+         width: 90%;
+         padding: 18px 20px;
+         border: 1px solid $grey;
+         border-radius: 8px;
+         font-size: 16px;
+         line-height: 20px;
+         margin-bottom: 20px;
+      }
+      .auth-form__errors{
+         color: red;
+         margin-bottom: 5px;
+      }
+      .form-btn{
+         cursor: pointer;
+         width: 100%;
+         padding: 15px 0;
+         font-size: 20px;
+         line-height: 24px;
+         background-color: $btn-bg-blue;
+         border-radius: 8px;
+         border: none;
+         color: #fff;
+      }
+      .form-login__register{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 100%;
+         margin-top: 15px;
+         gap: 10px;
+      }
+   }
+}
