@@ -46,8 +46,8 @@ const Favourite = () => {
                   <h3 className="card__title">{product.name}</h3>
                   <p className="card__rating">{renderStars(product.rating)}</p>
                   <div className="card__price-wrapper">
-                    <p className="card__price">{product.price}</p>
-                    <p className="card__discount">{product.price + 150}</p>
+                    <p className="card__price">${product.price}</p>
+                    <p className="card__discount">${product.price + 150}</p>
                     <p className='card__sale'>24% OFF</p>
                   </div>
               </div>
