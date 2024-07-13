@@ -1,12 +1,9 @@
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$danger-color: #e74c3c;
-$background-color: #f8f9fa;
-$text-color: #333;
-$border-radius: 5px;
-$box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+@import '../../index.scss';
 
 .cart-page {
+   display: flex;
+   flex-direction: column;
+   align-items: end;
    padding: 20px;
    background-color: $background-color;
    min-height: 100vh;
@@ -38,28 +35,36 @@ $box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
       td {
          background-color: white;
+
+         .quantity__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0 10px;
+
+            button {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               padding: 5px 10px;
+               border: none;
+               border-radius: $border-radius;
+               cursor: pointer;
+               background-color: #F6F7F8;
+               color: $light-blue;
+            }
+         }
       }
    }
 
    button {
-      padding: 5px 10px;
+      padding: 6px 10px;
       border: none;
-      border-radius: $border-radius;
+      border-radius: 50%;
       cursor: pointer;
 
       &.remove {
-         background-color: $danger-color;
-         color: white;
-      }
-
-      &.quantity {
-         background-color: $secondary-color;
-         color: white;
-      }
-
-      &:disabled {
-         background-color: #ddd;
-         cursor: not-allowed;
+         background-color: #ff68752d;
       }
    }
 
@@ -69,31 +74,35 @@ $box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       border-radius: $border-radius;
       box-shadow: $box-shadow;
       text-align: right;
+      width: 100%;
+      max-width: 400px;
+      margin-top: 20px;
 
-      p {
-         margin: 10px 0;
-         font-size: 18px;
-         color: $text-color;
+      .summary-item {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 10px 0;
+         border-bottom: 1px solid #eee;
 
          &:last-child {
-            font-weight: bold;
-            font-size: 20px;
+            border-bottom: none;
          }
-      }
-   }
-}
 
-@media (max-width: 768px) {
-   .cart-page {
-      padding: 10px;
+         &.total {
+            font-weight: bold;
+            font-size: 1.2rem;
+         }
 
-      table,
-      .cart-summary {
-         font-size: 14px;
-      }
+         .label {
+            font-size: 1rem;
+            color: $text-color;
+         }
 
-      button {
-         padding: 3px 5px;
+         .value {
+            font-size: 1rem;
+            color: $primary-color;
+         }
       }
    }
 }

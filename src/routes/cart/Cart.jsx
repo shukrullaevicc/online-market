@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import './Cart.scss';
+import x from '../../images/x.svg';
 
 const Cart = () => {
   const { t } = useTranslation();
@@ -55,25 +56,38 @@ const Cart = () => {
         <tbody>
           {cartProducts.map(product => (
             <tr key={product.id}>
-              <td>{product.name}</td>
+              <td style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}><img src={product.image} alt="" width="50" height="50" style={{ objectFit: 'cover' }} /> {product.name}</td>
               <td>${product.price}</td>
               <td>
-                <button onClick={() => handleQuantityChange(product.id, -1)}><AiOutlineMinus /></button>
-                {product.quantity}
-                <button onClick={() => handleQuantityChange(product.id, 1)}><AiOutlinePlus /></button>
+                <div className='quantity__wrapper'>
+                  <button onClick={() => handleQuantityChange(product.id, -1)}><AiOutlineMinus /></button>
+                  <p className='quantity'>{product.quantity}</p>
+                  <button onClick={() => handleQuantityChange(product.id, 1)}><AiOutlinePlus /></button>
+                </div>
               </td>
               <td>${(product.price * product.quantity).toFixed(2)}</td>
               <td>
-                <button onClick={() => handleRemoveProduct(product.id)}>{t('remove')}</button>
+                <button className='remove' onClick={() => handleRemoveProduct(product.id)}>
+                  <img src={x} alt="" />
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
       <div className="cart-summary">
-        <p>{t('Subtotal')} ${total.toFixed(2)}</p>
-        <p>{t('Shipping Fee')} $20</p>
-        <p>{t('Total')} ${(total + 20).toFixed(2)}</p>
+        <div className="summary-item">
+          <span className="label">{t('Subtotal')}</span>
+          <span className="value">${total.toFixed(2)}</span>
+        </div>
+        <div className="summary-item">
+          <span className="label">{t('Shipping Fee')}</span>
+          <span className="value">$20</span>
+        </div>
+        <div className="summary-item total">
+          <span className="label">{t('Total')}</span>
+          <span className="value">${(total + 20).toFixed(2)}</span>
+        </div>
       </div>
     </div>
   );
