@@ -43,5 +43,7 @@
    "Actions": "Actions",
    "Subtotal": "Subtotal:",
    "Shipping Fee": "Shipping Fee:",
-   "remove": "Remove"
+   "remove": "Remove",
+   "apartment": "Apartment",
+   "zip": "Zip"
 }

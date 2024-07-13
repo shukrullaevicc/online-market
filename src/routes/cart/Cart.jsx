@@ -56,7 +56,10 @@ const Cart = () => {
         <tbody>
           {cartProducts.map(product => (
             <tr key={product.id}>
-              <td style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}><img src={product.image} alt="" width="50" height="50" style={{ objectFit: 'cover' }} /> {product.name}</td>
+              <td style={{ display: 'flex', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
+                <img src={product.image} alt="" width="50" height="50" style={{ objectFit: 'cover' }} /> 
+                {product.name}
+              </td>
               <td>${product.price}</td>
               <td>
                 <div className='quantity__wrapper'>
@@ -68,7 +71,7 @@ const Cart = () => {
               <td>${(product.price * product.quantity).toFixed(2)}</td>
               <td>
                 <button className='remove' onClick={() => handleRemoveProduct(product.id)}>
-                  <img src={x} alt="" />
+                  <img src={x} alt="Remove" />
                 </button>
               </td>
             </tr>

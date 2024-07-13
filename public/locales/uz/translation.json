@@ -43,5 +43,7 @@
    "Actions": "Vazifa",
    "Subtotal": "Oraliq jami:",
    "Shipping Fee": "Yetkazib berish:",
-   "remove": "O'chirish"
+   "remove": "O'chirish",
+   "apartment": "Kvartira",
+   "zip": "Zip"
 }

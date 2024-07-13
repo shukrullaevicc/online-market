@@ -1,33 +1,34 @@
-import axios from '../../api'
-import { useEffect, useState } from 'react'
-import { AiFillStar } from "react-icons/ai"; 
-import './TopRated.scss'
-import { t } from 'i18next';
+import axios from '../../api';
+import { useEffect, useState } from 'react';
+import { AiFillStar } from "react-icons/ai";
+import './TopRated.scss';
+import { useTranslation } from 'react-i18next';
 
 const TopRated = () => {
-   const [filteredProducts, setFilteredProducts] = useState([])
+   const { t } = useTranslation();
+   const [filteredProducts, setFilteredProducts] = useState([]);
 
    useEffect(() => {
       async function loadData() {
          try {
-            const response = await axios.get('/products')
-            const products = response.data
+            const response = await axios.get('/products');
+            const products = response.data;
 
             // Sort products by rating in descending order
-            const sortedProducts = products.sort((a, b) => b.rating - a.rating)
+            const sortedProducts = products.sort((a, b) => b.rating - a.rating);
 
             // Select the top 3 rated products
-            const topRatedProducts = sortedProducts.slice(0, 3)
+            const topRatedProducts = sortedProducts.slice(0, 3);
 
-            setFilteredProducts(topRatedProducts)
+            setFilteredProducts(topRatedProducts);
          } 
          catch (error) {
-            console.log(error)
+            console.log(error);
          }
       }
 
-      loadData()
-   }, [])
+      loadData();
+   }, []);
 
    const renderStars = (rating) => {
       return Array.from({ length: rating }, (_, index) => (
@@ -44,7 +45,7 @@ const TopRated = () => {
                   {
                      filteredProducts.map(product => (
                         <div className='top-rated__card' key={product.id}>
-                           <img src={product.image} alt="" />
+                           <img src={product.image} alt={product.name} />
                            <div className="top-rated__content">
                               <p className='top-rated__name'>{product.name}</p>
                               <p className="card__rating">{renderStars(product.rating)}</p>
@@ -60,7 +61,7 @@ const TopRated = () => {
             </div>
          </div>
       </div>
-   )
-}
+   );
+};
 
-export default TopRated
+export default TopRated;
